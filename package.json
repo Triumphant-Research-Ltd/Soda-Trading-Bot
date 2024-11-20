@@ -1,0 +1,53 @@
+{
+  "name": "soda",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@coinbase/wallet-sdk": "^4.0.4",
+    "@element-plus/icons-vue": "^2.3.1",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/i18n": "^8.3.3",
+    "@okwallet/extension": "^1.0.19-beta",
+    "@pinia/nuxt": "^0.5.3",
+    "@web3modal/ethers": "^5.1.9",
+    "axios": "^1.7.5",
+    "bignumber.js": "^9.1.2",
+    "browser-buffer": "^0.0.1-1",
+    "bs58": "^6.0.0",
+    "dayjs": "^1.11.13",
+    "ethers": "^6.13.2",
+    "mitt": "^3.0.1",
+    "nuxt": "^3.12.4",
+    "nuxt-gtag": "^2.1.0",
+    "pinia": "^2.2.1",
+    "qrcode": "^1.5.4",
+    "qs": "^6.13.0",
+    "tslib": "^2.6.2",
+    "uuid": "^10.0.0",
+    "vue": "latest",
+    "vue-i18n": "^9.14.0"
+  },
+  "devDependencies": {
+    "@element-plus/nuxt": "^1.0.9",
+    "@types/qrcode": "^1.5.5",
+    "@types/qs": "^6.9.15",
+    "@types/uuid": "^10.0.0",
+    "@vueuse/core": "^11.0.1",
+    "@vueuse/nuxt": "^11.0.1",
+    "element-plus": "^2.8.0",
+    "localforage": "^1.10.0",
+    "nuxt3-localforage": "^0.1.2",
+    "sass": "^1.77.8"
+  },
+  "optionalDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

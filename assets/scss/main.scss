@@ -1,0 +1,328 @@
+@use "base" as *;
+@use "global.variable" as *;
+
+html, body {
+  font-family: $fontFamily;
+  background-color: #000;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  @include font(14px, 400);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.border {
+  border: $border1;
+}
+
+.main {
+  @include box();
+  flex-direction: column;
+
+}
+
+.container {
+  @include box();
+  flex-direction: column;
+  width: $pcWidth;
+}
+
+.hover {
+  background-color: $backgroundColor2 !important;
+}
+
+.table {
+  @include box($justify: flex-start, $align: flex-start, $direction: column);
+  border: $border1;
+  border-radius: 4px;
+
+  &.fit-content {
+    width: fit-content;
+  }
+
+  &.borderless {
+    border: none !important;
+  }
+
+  .table-header {
+    @include box($justify: flex-start, $gap: 4px, $height: 64px, $padding: 0 24px);
+    border-bottom: $border1;
+
+    &.padding-left-24 {
+      padding: 0 12px 0 24px !important;
+
+    }
+
+    &.borderless {
+      border: none !important;
+    }
+
+    .table-th {
+      @include box($justify: flex-start, $width: auto, $gap: 4px);
+      color: $textColor2;
+      overflow: hidden;
+
+
+      &.button {
+        cursor: pointer;
+      }
+
+      &.underline {
+        text-decoration: underline;
+      }
+
+      &.padding-left {
+        padding-left: 8px;
+      }
+
+      &.padding-right {
+        padding-right: 8px;
+      }
+
+      &.flex-center {
+        justify-content: center !important;
+      }
+
+      &.flex-end {
+        justify-content: flex-end !important;
+      }
+
+      &.expanded {
+        flex: 1;
+      }
+
+    }
+  }
+
+  .table-body {
+    @include box($justify: flex-start, $align: center, $direction: column);
+  }
+
+  .table-row {
+    @include box($justify: flex-start, $gap: 4px, $height: 71px, $padding: 0 24px);
+    border-bottom: $border1;
+
+
+    &.padding-left-24 {
+      padding: 0 12px 0 24px !important;
+    }
+
+
+    &.hover-effect:hover {
+      background-color: $backgroundColor2;
+    }
+
+
+    &.borderless {
+      border: none !important;
+    }
+
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
+
+    .table-td {
+      @include box($justify: flex-start, $width: auto);
+      color: $textColor1;
+      overflow: hidden;
+
+
+      &.flex-center {
+        justify-content: center !important;
+      }
+
+      &.padding-left {
+        padding-left: 8px;
+      }
+
+      &.padding-right {
+        padding-right: 8px;
+      }
+
+      &.flex-end {
+        justify-content: flex-end !important;
+      }
+
+      &.expanded {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.el-popper {
+  .banner-menu {
+    @include box($width: auto, $height: auto);
+    min-height: 96px;
+    flex-direction: column;
+
+    &.common-solution {
+      width: 210px;
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+      min-height: 48px;
+    }
+
+
+    &.community {
+      @include box($justify: flex-start, $direction: column, $height: fit-content);
+      background-color: $backgroundColor3;
+
+      .community-row {
+        @include box($justify: flex-start, $height: 48px);
+        cursor: pointer;
+        color: $primaryColor;
+        font-size: 14px;
+        padding: 16px;
+
+
+        &.menu-item-one {
+
+          @include font(14px, 500);
+          color: $primaryColor;
+
+          .menu-item-arrow {
+            transform: rotate(180deg);
+          }
+        }
+
+        &.menu-item-two {
+          gap: 4px !important;
+          justify-content: flex-start;
+          @include font(12px, 400);
+          color: $textColor2;
+
+          &:hover {
+            background-color: $backgroundColor2;
+            color: $textColor1;
+          }
+
+        }
+
+      }
+    }
+
+    .menu-item {
+      @include box($justify: flex-start, $height: 48px);
+      cursor: pointer;
+      color: $primaryColor;
+      font-size: 14px;
+      background-color: $backgroundColor3;
+      padding: 16px;
+
+      &.filter-menu-item {
+        min-width: 90px;
+        height: 36px;
+      }
+
+      &.token-group {
+        word-break: break-all;
+        white-space: wrap;
+      }
+
+      &.user {
+        min-width: 152px;
+        gap: 4px;
+      }
+
+      &:hover {
+        background-color: $backgroundColor2;
+      }
+
+      &.selected {
+        background-color: $backgroundColor4;
+      }
+
+      &:nth-child(1) {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+
+      &:nth-last-child(1) {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+  }
+
+  .sniper-settings {
+    @include box($padding: 24px);
+    flex-direction: column;
+
+    .head {
+
+    }
+
+    .tail {
+
+    }
+
+
+  }
+
+  .trade-menu {
+    @include box($direction: column, $padding: 8px, $gap: 4px);
+    background-color: $backgroundColor2;
+
+    .trade-menu-item {
+      @include box($gap: 4px, $padding: 8px 12px, $height: 38px);
+      border-radius: 2px;
+      color: $textColor1;
+      @include font(14px, 500);
+
+      &.left {
+        justify-content: flex-start;
+      }
+
+      &.disabled {
+        color: $textColor3 !important;
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+
+      &:hover {
+        background-color: $backgroundColor4;
+      }
+    }
+
+  }
+}
+
+.rotate-animation {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.green {
+  color: $green1;
+}
+
+.red {
+  color: $red1;
+}
+
+.defaultText {
+  color: $textColor1;
+}
+
+.text-brake {
+  word-break: break-all;
+}
+
+a, a:visited, a:hover {
+  cursor: pointer;
+  color: $textColor1;
+}
